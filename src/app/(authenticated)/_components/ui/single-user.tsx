@@ -6,16 +6,16 @@ export default function SingleUser({
   name,
   image,
   id,
-  online,
+  // online,
 }: {
   name: string;
   image: string;
   id: string;
-  online: number;
+  // online: number;
 }) {
 
   
-  console.log(online);
+  // console.log(online);
 
   return (
     <Link
@@ -30,9 +30,7 @@ export default function SingleUser({
           height={200}
           className="w-12 h-12 rounded-full bg-contain"
         />
-        {online == 1 && (
-          <div className="absolute bg-green-500 w-4 h-4 rounded-full top-0 right-0" />
-        )}
+       
       </div>
       <div>
         <h1 className="group-hover:text-black">{name}</h1>

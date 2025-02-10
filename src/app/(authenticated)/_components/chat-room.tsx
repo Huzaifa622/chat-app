@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 // import { useSearchParams } from "next/navigation";
 import SideBar from "./ui/sidebar";
 import MessageRoom from "./ui/message-room";
@@ -8,10 +8,10 @@ import { useSocket } from "@/context/socket-context";
 
 // import { useSocket } from "@/context/socket-context";
 
-interface UserType {
-  id: string | number;
-  // Add other user properties if needed
-}
+// interface UserType {
+//   id: string | number;
+//   // Add other user properties if needed
+// }
 
 export default function ChatRoom() {
     // console.log(data)

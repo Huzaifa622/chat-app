@@ -4,10 +4,10 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { api } from "@/lib/axios-instance";
 import SingleUser from "./single-user";
-import { useSocket } from "@/context/socket-context";
+// import { useSocket } from "@/context/socket-context";
 
 export default function SideBar() {
-  const socket = useSocket()
+  // const socket = useSocket()
   const [allUsers, setAllUsers] = useState<
     { name: string; isOnline: number; image: string; id: string }[]
   >([]);
@@ -19,22 +19,7 @@ export default function SideBar() {
   useEffect(() => {
     fetching();
   }, []);
-  useEffect(() => {
-    // socket?.connect()
-    console.log(socket)
-    socket?.on("user-status-changed", ({ userId, isOnline }) => {
-    console.log(userId , isOnline , "here change status")
-      setAllUsers((prevUsers) =>
-        prevUsers.map((user) =>
-          user.id === userId ? { ...user, isOnline } : user
-        )
-      );
-    });
-    
-    return () => {
-      socket?.off("user-status-changed");
-    };
-  }, [socket]);
+ 
 
   return (
     <div className="w-[30%] text-white overflow-hidden border-r example">
@@ -60,7 +45,7 @@ export default function SideBar() {
             name={u.name}
             image={u.image}
             id={u.id}
-            online={u.isOnline}
+            // online={u.isOnline}
           />
         ))}
       </div>
